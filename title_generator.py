@@ -14,13 +14,6 @@ def score_sentences(sentences, keyword_scores):
 
     return scores
 
-def clean_title(title):
-    title = title.replace(" are ", " ")
-    title = title.replace(" is ", " ")
-    title = title.replace(" widely ", " ")
-    title = title.replace(",", "")
-    return title
-
 def shorten_title(title, max_words=8):
     words = title.split()
     return " ".join(words[:max_words])
@@ -31,8 +24,7 @@ def generate_title(text, keyword_scores):
 
     best_sentence, _ = max(scored, key=lambda x: x[1])
 
-    title = clean_title(best_sentence)
-    title = shorten_title(title)
+    title = shorten_title(best_sentence)
 
     return title
 

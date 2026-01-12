@@ -10,7 +10,7 @@ text = st.text_area("Paste your text here:")
 if st.button("Extract keywords"):
     tokens = preprocess(text)
 
-    docs = [tokens]  # for now, single document
+    docs = [tokens]
     df = compute_df(docs)
     idf = compute_idf(df, len(docs))
 
