@@ -1,11 +1,11 @@
 import re
-import spacy
+import nltk
+from nltk.corpus import stopwords
 
-nlp_en = spacy.load("en_core_web_sm")
-nlp_ru = spacy.load("ru_core_news_sm")
+nltk.download("stopwords")
 
-stopwords_en = nlp_en.Defaults.stop_words
-stopwords_ru = nlp_ru.Defaults.stop_words
+stopwords_en = set(stopwords.words("english"))
+stopwords_ru = set(stopwords.words("russian"))
 
 def preprocess(text):
 
@@ -17,3 +17,5 @@ def preprocess(text):
         if t not in stopwords_en and t not in stopwords_ru
     ]
     return tokens
+
+print(stopwords_ru)

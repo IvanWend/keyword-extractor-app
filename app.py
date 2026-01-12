@@ -1,7 +1,6 @@
 import streamlit as st
 from preprocess import preprocess
 from tfidf import compute_tf, compute_df, compute_idf, compute_tfidf
-from title_generator import generate_title
 
 st.title("Извлечение ключевых слов (TF-IDF)")
 st.caption("TF-IDF на корпусе документов")
