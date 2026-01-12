@@ -3,7 +3,6 @@ from preprocess import preprocess
 from tfidf import compute_tf, compute_df, compute_idf, compute_tfidf
 
 st.title("Извлечение ключевых слов (TF-IDF)")
-st.caption("TF-IDF на корпусе документов")
 
 num_docs = st.number_input(
     "Количество документов",
